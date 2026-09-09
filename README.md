@@ -3,7 +3,11 @@
 <img src="./assets/mono-fluid-banner.svg" width="100%" alt="WHITE-XR monochrome fluid banner" />
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=900&color=222222&center=true&vCenter=true&repeat=true&width=900&height=55&lines=Robotics+%2F%2F+3D+Vision+%2F%2F+Embodied+AI;Perception+%E2%86%92+Geometry+%E2%86%92+Control+%E2%86%92+Action;Build+physical+intelligence+for+the+real+world." alt="Typing introduction" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=900&color=F5F5F5&center=true&vCenter=true&repeat=true&width=900&height=55&lines=Robotics+%2F%2F+3D+Vision+%2F%2F+Embodied+AI;Perception+%E2%86%92+Geometry+%E2%86%92+Control+%E2%86%92+Action;Build+physical+intelligence+for+the+real+world." />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=900&color=222222&center=true&vCenter=true&repeat=true&width=900&height=55&lines=Robotics+%2F%2F+3D+Vision+%2F%2F+Embodied+AI;Perception+%E2%86%92+Geometry+%E2%86%92+Control+%E2%86%92+Action;Build+physical+intelligence+for+the+real+world." />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3000&pause=900&color=222222&center=true&vCenter=true&repeat=true&width=900&height=55&lines=Robotics+%2F%2F+3D+Vision+%2F%2F+Embodied+AI;Perception+%E2%86%92+Geometry+%E2%86%92+Control+%E2%86%92+Action;Build+physical+intelligence+for+the+real+world." alt="Typing introduction" />
+  </picture>
 </a>
 
 </div>
