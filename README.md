@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="./assets/mono-fluid-banner.svg" width="100%" alt="WHITE-XR monochrome fluid banner" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/mono-fluid-banner-dark.gif" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/mono-fluid-banner-light.gif" />
+  <img src="./assets/mono-fluid-banner-light.gif" width="100%" alt="Animated WHITE-XR non-Newtonian fluid banner" />
+</picture>
 
 <a href="https://git.io/typing-svg">
   <picture>
@@ -18,17 +22,8 @@
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-F2F2F2?style=for-the-badge&logo=python&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![C++](https://img.shields.io/badge/C%2B%2B-F2F2F2?style=for-the-badge&logo=cplusplus&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![OpenCV](https://img.shields.io/badge/OpenCV-F2F2F2?style=for-the-badge&logo=opencv&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![Open3D](https://img.shields.io/badge/Open3D-F2F2F2?style=for-the-badge&logo=opengl&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![YOLO](https://img.shields.io/badge/YOLO-F2F2F2?style=for-the-badge&logo=yolo&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![PyTorch](https://img.shields.io/badge/PyTorch-F2F2F2?style=for-the-badge&logo=pytorch&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![VLA](https://img.shields.io/badge/VLA-F2F2F2?style=for-the-badge&logo=robotframework&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![LeRobot](https://img.shields.io/badge/LeRobot-F2F2F2?style=for-the-badge&logo=huggingface&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![ROS2](https://img.shields.io/badge/ROS2-F2F2F2?style=for-the-badge&logo=ros&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![CUDA](https://img.shields.io/badge/CUDA-F2F2F2?style=for-the-badge&logo=nvidia&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
-![Git](https://img.shields.io/badge/Git-F2F2F2?style=for-the-badge&logo=git&logoColor=111111&labelColor=F2F2F2&color=F2F2F2)
+<code>Python</code> · <code>C++</code> · <code>OpenCV</code> · <code>Open3D</code> · <code>YOLO</code> · <code>PyTorch</code><br />
+<code>VLA</code> · <code>LeRobot</code> · <code>ROS2</code> · <code>CUDA</code> · <code>Git</code>
 
 </div>
 
@@ -57,28 +52,50 @@ dev_stack        : Windows · Linux · Git · CUDA
 ## SYSTEM_STATUS // GitHub 状态
 
 <div align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=white-xr&show_icons=true&hide_border=true&bg_color=ffffff&title_color=111111&icon_color=111111&text_color=333333&ring_color=111111" alt="white-xr GitHub stats" />
-  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=white-xr&layout=compact&hide_border=true&bg_color=ffffff&title_color=111111&icon_color=111111&text_color=333333" alt="white-xr top languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=github_dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default" />
+    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default" alt="white-xr GitHub stats" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=github_dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default" />
+    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default" alt="white-xr top languages" />
+  </picture>
 </div>
 
 ---
 
 ## PUBLIC_REPOSITORIES // 公开项目
 
-<div align="center">
+<table width="100%">
+<tr>
+<td width="33%" valign="top">
 
-<a href="https://github.com/white-xr/ShiZi-Fast-FoundationStereo">
-  <img width="48%" src="https://github-stats-extended.vercel.app/api/pin/?username=white-xr&repo=ShiZi-Fast-FoundationStereo&hide_border=true&bg_color=ffffff&title_color=111111&icon_color=111111&text_color=333333" alt="ShiZi-Fast-FoundationStereo" />
-</a>
-<a href="https://github.com/white-xr/orbbec-live-rgb-collector">
-  <img width="48%" src="https://github-stats-extended.vercel.app/api/pin/?username=white-xr&repo=orbbec-live-rgb-collector&hide_border=true&bg_color=ffffff&title_color=111111&icon_color=111111&text_color=333333" alt="orbbec-live-rgb-collector" />
-</a>
+### [ShiZi-Fast-FoundationStereo](https://github.com/white-xr/ShiZi-Fast-FoundationStereo)
 
-<a href="https://github.com/white-xr/-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings">
-  <img width="48%" src="./assets/zebrawatch-card.svg" alt="ZebraWatch" />
-</a>
+Fast-FoundationStereo 的柿子适配改进。<br />
+<sub>Python · Stereo Vision</sub>
 
-</div>
+</td>
+<td width="33%" valign="top">
+
+### [orbbec-live-rgb-collector](https://github.com/white-xr/orbbec-live-rgb-collector)
+
+Orbbec RGB-D 与数据集实时采集。<br />
+<sub>Python · RGB-D</sub>
+
+</td>
+<td width="33%" valign="top">
+
+### [ZebraWatch](https://github.com/white-xr/-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings)
+
+斑马线行人检测与行为分析。<br />
+<sub>Python · Computer Vision</sub>
+
+</td>
+</tr>
+</table>
 
 ---
 
