@@ -36,66 +36,56 @@ dev_stack        : Windows · Linux · Git · CUDA
 
 ---
 
-## CURRENT_FOCUS // 当前方向
-
-- Robot Manipulation / 机器人操作
-- 3D Vision & Stereo Vision / 三维视觉与双目视觉
-- Visual Servoing / 视觉伺服
-- Hand-Eye Calibration & 3D Geometry / 手眼标定与三维几何
-- VLA & Embodied AI / 视觉语言动作与具身智能
-
-> **Perception → Geometry → Control → Action**  
-> 从感知、几何到控制，让视觉真正进入机器人闭环。
-
----
-
-## SYSTEM_STATUS // GitHub 状态
+## ACTIVE_PIPELINE // 当前技术闭环
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=github_dark&title_color=f5f5f5&text_color=d0d7de&bg_color=00000000&border_color=30363d&icon_color=d0d7de&chart_color=f5f5f5" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" />
-    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" alt="white-xr GitHub stats" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=github_dark&title_color=f5f5f5&text_color=d0d7de&bg_color=00000000&border_color=30363d&icon_color=d0d7de&chart_color=f5f5f5" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" />
-    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" alt="white-xr top languages" />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/active-pipeline-dark.gif?v=pulse-20260909" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/active-pipeline-light.gif?v=pulse-20260909" />
+    <img width="100%" src="./assets/active-pipeline-light.gif?v=pulse-20260909" alt="Animated pipeline from perception to action" />
   </picture>
 </div>
 
 ---
 
-## PUBLIC_REPOSITORIES // 公开项目
+## SYSTEM_PULSE // 实时状态
 
-<table width="100%">
-<tr>
-<td width="33%" valign="top">
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/profile-system-dark.svg?v=pulse-20260909" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/profile-system-light.svg?v=pulse-20260909" />
+    <img width="100%" src="https://raw.githubusercontent.com/white-xr/white-xr/output/profile-system-light.svg?v=pulse-20260909" alt="WHITE-XR live system pulse" />
+  </picture>
+</div>
 
-### [ShiZi-Fast-FoundationStereo](https://github.com/white-xr/ShiZi-Fast-FoundationStereo)
+---
 
-Fast-FoundationStereo 的柿子适配改进。<br />
-<sub>Python · Stereo Vision</sub>
+## SELECTED_SYSTEMS // 代表项目
 
-</td>
-<td width="33%" valign="top">
+### `01 / DEPTH PERCEPTION`
 
-### [orbbec-live-rgb-collector](https://github.com/white-xr/orbbec-live-rgb-collector)
+#### [ShiZi-Fast-FoundationStereo](https://github.com/white-xr/ShiZi-Fast-FoundationStereo)
 
-Orbbec RGB-D 与数据集实时采集。<br />
-<sub>Python · RGB-D</sub>
+面向真实三维感知的立体匹配与深度估计改进。<br />
+`PYTHON` · `STEREO VISION` · `DEPTH`
 
-</td>
-<td width="33%" valign="top">
+---
 
-### [ZebraWatch](https://github.com/white-xr/-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings)
+### `02 / DATA INFRASTRUCTURE`
 
-斑马线行人检测与行为分析。<br />
-<sub>Python · Computer Vision</sub>
+#### [orbbec-live-rgb-collector](https://github.com/white-xr/orbbec-live-rgb-collector)
 
-</td>
-</tr>
-</table>
+Orbbec RGB-D 实时采集与数据集生产工具。<br />
+`PYTHON` · `ORBBEC` · `RGB-D`
+
+---
+
+### `03 / URBAN VISION`
+
+#### [ZebraWatch](https://github.com/white-xr/-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings)
+
+斑马线行人检测与行为分析系统。<br />
+`PYTHON` · `DETECTION` · `VISION`
 
 ---
 

@@ -17,6 +17,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Check out profile source
+        uses: actions/checkout@v4
+
       - name: Generate monochrome contribution snakes
         uses: Platane/snk/svg-only@v3
         with:
@@ -28,7 +31,15 @@ jobs:
             dist/github-contribution-grid-snake.svg?color_snake=%23111111&color_dots=%23EBEDF0,%23D0D7DE,%23A8B0B8,%236B7280,%23111111
             dist/github-contribution-grid-snake-dark.svg?color_snake=%23F5F5F5&color_dots=%23161B22,%2330363D,%23545D66,%239AA1A9,%23E6E8EA
 
-      - name: Publish snake to output branch
+      - name: Generate monochrome system pulse
+        env:
+          PROFILE_TOKEN: ${{ secrets.SNAKE_TOKEN || github.token }}
+        run: >-
+          python scripts/generate_profile_metrics.py
+          --username "${{ github.repository_owner }}"
+          --output-dir dist
+
+      - name: Publish profile assets to output branch
         uses: crazy-max/ghaction-github-pages@v5
         with:
           build_dir: dist
