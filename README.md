@@ -75,7 +75,7 @@ dev_stack        : Windows · Linux · Git · CUDA
 </a>
 
 <a href="https://github.com/white-xr/-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings">
-  <img width="48%" src="https://github-stats-extended.vercel.app/api/pin/?username=white-xr&repo=-Python-Based-Pedestrian-Detection-and-Analysis-on-Zebra-Crossings&hide_border=true&bg_color=ffffff&title_color=111111&icon_color=111111&text_color=333333" alt="ZebraWatch" />
+  <img width="48%" src="./assets/zebrawatch-card.svg" alt="ZebraWatch" />
 </a>
 
 </div>
@@ -98,9 +98,9 @@ style    : Build it. Test it. Make it work in the real world.
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake.svg" />
-    <img width="100%" alt="GitHub contribution snake" src="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake-dark.svg?v=monochrome-20260909" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake.svg?v=monochrome-20260909" />
+    <img width="100%" alt="GitHub contribution snake" src="https://raw.githubusercontent.com/white-xr/white-xr/output/github-contribution-grid-snake.svg?v=monochrome-20260909" />
   </picture>
 </div>
 

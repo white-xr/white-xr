@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="140" viewBox="0 0 495 140" role="img" aria-labelledby="title desc">
+  <title id="title">ZebraWatch repository card</title>
+  <desc id="desc">A monochrome project card for the ZebraWatch pedestrian detection project.</desc>
+  <rect width="495" height="140" rx="10" fill="#ffffff"/>
+  <rect x="0.75" y="0.75" width="493.5" height="138.5" rx="9.25" fill="none" stroke="#d0d7de" stroke-width="1.5"/>
+  <g transform="translate(25 25)" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3.5A2.5 2.5 0 0 1 4.5 1h13A2.5 2.5 0 0 1 20 3.5V20l-4.5-3-4.5 3-4.5-3L2 20Z"/>
+    <path d="M7 6h8M7 10h6"/>
+  </g>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="60" y="43" font-size="18" font-weight="650" fill="#111111">ZebraWatch</text>
+    <text x="25" y="78" font-size="13.5" fill="#4b5563">Pedestrian detection and analysis at zebra crossings</text>
+    <circle cx="31" cy="112" r="6" fill="#555555"/>
+    <text x="44" y="117" font-size="12" fill="#4b5563">Python</text>
+    <text x="102" y="117" font-size="12" fill="#9aa1a9">·</text>
+    <text x="116" y="117" font-size="12" fill="#4b5563">Computer Vision</text>
+  </g>
+</svg>
