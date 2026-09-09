@@ -53,14 +53,14 @@ dev_stack        : Windows · Linux · Git · CUDA
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=github_dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default" />
-    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default" alt="white-xr GitHub stats" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=github_dark&title_color=f5f5f5&text_color=d0d7de&bg_color=00000000&border_color=30363d&icon_color=d0d7de&chart_color=f5f5f5" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" />
+    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" alt="white-xr GitHub stats" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=github_dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default" />
-    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default" alt="white-xr top languages" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=github_dark&title_color=f5f5f5&text_color=d0d7de&bg_color=00000000&border_color=30363d&icon_color=d0d7de&chart_color=f5f5f5" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" />
+    <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=white-xr&theme=default&title_color=111111&text_color=333333&bg_color=00000000&border_color=d0d7de&icon_color=333333&chart_color=111111" alt="white-xr top languages" />
   </picture>
 </div>
 
