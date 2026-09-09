@@ -21,6 +21,10 @@ jobs:
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
+          # SNAKE_TOKEN should be a classic PAT with read:user so private/internal
+          # contribution counts are included. Fall back to the repository token
+          # until the secret is configured.
+          github_token: ${{ secrets.SNAKE_TOKEN || github.token }}
           outputs: |
             dist/github-contribution-grid-snake.svg?color_snake=%2300F7FF&color_dots=%23EBEDF0,%230D5C63,%2300A6A6,%2300D4D4,%2300F7FF
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23FF00E6&color_dots=%23161B22,%233A0F5C,%236A1B9A,%23C000C8,%23FF00E6
