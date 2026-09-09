@@ -1,0 +1,46 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05070d"/>
+      <stop offset="55%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#090411"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f7ff"/>
+      <stop offset="50%" stop-color="#7a5cff"/>
+      <stop offset="100%" stop-color="#ff00e6"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f7ff" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="360" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="18" fill="url(#grid)"/>
+  <rect width="1200" height="360" rx="18" fill="url(#scan)"/>
+  <g fill="none" stroke="#00f7ff" stroke-width="2" opacity="0.9">
+    <path d="M42 78 V42 H190"/><path d="M1010 42 H1158 V78"/><path d="M42 282 V318 H190"/><path d="M1010 318 H1158 V282"/>
+  </g>
+  <g fill="none" stroke="#ff00e6" stroke-width="1.6" opacity="0.7">
+    <path d="M62 94 V62 H172"/><path d="M1028 62 H1138 V94"/><path d="M62 266 V298 H172"/><path d="M1028 298 H1138 V266"/>
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="13" fill="#7eeeff" opacity="0.9">
+    <text x="72" y="92">SYS://WHITE-XR</text><text x="930" y="92">STATUS://ONLINE</text><text x="72" y="286">MODE://BUILD_TEST_ITERATE</text><text x="894" y="286">LINK://PERCEPTION_CONTROL</text>
+  </g>
+  <text x="600" y="158" text-anchor="middle" font-family="JetBrains Mono, Segoe UI, Microsoft YaHei, sans-serif" font-size="64" font-weight="800" letter-spacing="8" fill="url(#neon)" filter="url(#glow)">WHITE-XR</text>
+  <text x="600" y="203" text-anchor="middle" font-family="JetBrains Mono, Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="600" letter-spacing="5" fill="#d7e2ff">柿子 // ROBOTICS // 3D VISION // EMBODIED AI</text>
+  <text x="600" y="242" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="16" letter-spacing="3" fill="#00f7ff" opacity="0.95">PERCEPTION → GEOMETRY → CONTROL → ACTION</text>
+  <g stroke="url(#neon)" stroke-width="2" opacity="0.8"><line x1="250" y1="180" x2="345" y2="180"/><line x1="855" y1="180" x2="950" y2="180"/></g>
+  <g fill="#00f7ff"><circle cx="238" cy="180" r="4"/><circle cx="962" cy="180" r="4"/></g>
+  <g fill="#ff00e6"><rect x="218" y="176" width="8" height="8" transform="rotate(45 222 180)"/><rect x="974" y="176" width="8" height="8" transform="rotate(45 978 180)"/></g>
+  <rect x="320" y="318" width="560" height="2" fill="url(#neon)" opacity="0.8"/>
+</svg>
