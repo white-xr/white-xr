@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/mono-fluid-banner-dark.gif" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/mono-fluid-banner-light.gif" />
-  <img src="./assets/mono-fluid-banner-light.gif" width="100%" alt="Animated WHITE-XR non-Newtonian fluid banner" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/mono-fluid-banner-dark.gif?v=smooth-20260909" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/mono-fluid-banner-light.gif?v=smooth-20260909" />
+  <img src="./assets/mono-fluid-banner-light.gif?v=smooth-20260909" width="100%" alt="Animated WHITE-XR non-Newtonian fluid banner" />
 </picture>
 
 <a href="https://git.io/typing-svg">
