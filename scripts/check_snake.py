@@ -34,6 +34,7 @@ def calendar(token, login):
         "owner_matches": result["data"]["viewer"]["login"].lower() == login.lower(),
         "read_user_scope": bool({"read:user", "user"} & set(scopes.replace(" ", "").split(","))),
         "scopes_header_present": bool(scopes),
+        "repo_scope": "repo" in scopes.replace(" ", "").split(","),
         "total": collection["contributionCalendar"]["totalContributions"],
         "restricted": collection["restrictedContributionsCount"],
         "has_restricted": collection["hasAnyRestrictedContributions"],
