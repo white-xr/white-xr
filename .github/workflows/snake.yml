@@ -2,7 +2,7 @@ name: Generate Contribution Snake
 
 on:
   schedule:
-    - cron: "20 0 * * *"
+    - cron: "17 0,6,12,18 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -10,6 +10,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: contribution-snake-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -20,8 +24,18 @@ jobs:
       - name: Check out profile source
         uses: actions/checkout@v4
 
+      - name: Test contribution verification
+        run: python -m unittest discover -s scripts -p 'test_check_snake.py'
+
+      - name: Verify private contribution visibility
+        env:
+          PROFILE_LOGIN: ${{ github.repository_owner }}
+          SNAKE_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+          ACTIONS_TOKEN: ${{ github.token }}
+        run: python scripts/check_snake.py snapshot --snapshot "$RUNNER_TEMP/snake-calendar.json"
+
       - name: Generate monochrome contribution snakes
-        uses: Platane/snk/svg-only@v3
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: ${{ github.repository_owner }}
           # Uses SNAKE_TOKEN (classic PAT with read:user) when configured so
@@ -30,6 +44,9 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg?color_snake=%23111111&color_dots=%23EBEDF0,%23D0D7DE,%23A8B0B8,%236B7280,%23111111
             dist/github-contribution-grid-snake-dark.svg?color_snake=%23F5F5F5&color_dots=%23161B22,%2330363D,%23545D66,%239AA1A9,%23E6E8EA
+
+      - name: Verify both SVG grids against contribution data
+        run: python scripts/check_snake.py verify --snapshot "$RUNNER_TEMP/snake-calendar.json" --output-dir dist
 
       - name: Generate monochrome system pulse
         env:
@@ -40,6 +57,7 @@ jobs:
           --output-dir dist
 
       - name: Publish profile assets to output branch
+        if: github.ref == 'refs/heads/main'
         uses: crazy-max/ghaction-github-pages@v5
         with:
           build_dir: dist
