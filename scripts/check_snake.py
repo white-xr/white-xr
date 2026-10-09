@@ -82,9 +82,12 @@ def check_visibility(source, baseline):
     base_days = {d["date"]: d["count"] for d in baseline["days"]}
     if source_days.keys() != base_days.keys():
         raise RuntimeError("Calendar date ranges changed during verification; retry the workflow")
-    if any(source_days[day] < count for day, count in base_days.items()):
-        raise RuntimeError("Owner calendar lost contributions relative to the workflow token; retry")
+    # Different viewers can receive different daily attribution. Do not require
+    # the workflow-token calendar to be a cell-by-cell subset of the owner's.
+    # SVG verification below uses only the owner's actual calendar.
     additional = source["total"] - baseline["total"]
+    if additional < 0:
+        raise RuntimeError("Owner calendar total is below the workflow-token total; retry")
     if additional <= 0 and source["restricted"] <= 0:
         raise RuntimeError("No private-contribution coverage could be verified; check profile visibility and SNAKE_TOKEN. Keeping previous images")
     return additional

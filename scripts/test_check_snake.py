@@ -41,15 +41,20 @@ class SnakeChecks(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "No private-contribution"):
             checker.check_visibility(self.source, self.source)
 
-    def test_reject_window_change_or_lost_contributions(self):
+    def test_reject_window_change_or_total_regression(self):
         baseline = copy.deepcopy(self.baseline)
         baseline["days"][0]["date"] = "2026-10-07"
         with self.assertRaisesRegex(RuntimeError, "date ranges"):
             checker.check_visibility(self.source, baseline)
         baseline["days"][0]["date"] = "2026-10-08"
-        baseline["days"][0]["count"] = 9
-        with self.assertRaisesRegex(RuntimeError, "lost contributions"):
+        baseline["total"] = 9
+        with self.assertRaisesRegex(RuntimeError, "total is below"):
             checker.check_visibility(self.source, baseline)
+
+    def test_baseline_is_not_assumed_to_be_a_daily_subset(self):
+        self.baseline["days"][0]["count"] = 0
+        self.baseline["days"][1]["count"] = 2
+        self.assertEqual(checker.check_visibility(self.source, self.baseline), 6)
 
     def test_verify_both_themes_and_reject_missing_or_wrong_cell(self):
         with tempfile.TemporaryDirectory() as temp:
