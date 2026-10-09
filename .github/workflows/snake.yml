@@ -20,6 +20,13 @@ jobs:
       - name: Check out profile source
         uses: actions/checkout@v4
 
+      - name: Audit contribution visibility without repository details
+        env:
+          PROFILE_LOGIN: ${{ github.repository_owner }}
+          SNAKE_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+          ACTIONS_TOKEN: ${{ github.token }}
+        run: python scripts/check_snake.py
+
       - name: Generate monochrome contribution snakes
         uses: Platane/snk/svg-only@v3
         with:
@@ -40,6 +47,7 @@ jobs:
           --output-dir dist
 
       - name: Publish profile assets to output branch
+        if: github.ref == 'refs/heads/main'
         uses: crazy-max/ghaction-github-pages@v5
         with:
           build_dir: dist
