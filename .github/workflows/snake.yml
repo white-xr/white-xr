@@ -4,6 +4,14 @@ on:
   schedule:
     - cron: "17 0,6,12,18 * * *"
   workflow_dispatch:
+    inputs:
+      repository_fingerprint:
+        description: SHA-256 fingerprint for aggregate-only repository matching
+        type: string
+      expected_counts:
+        description: Expected daily author counts without repository or commit identifiers
+        type: string
+        default: '{}'
   push:
     branches:
       - main
@@ -23,6 +31,15 @@ jobs:
     steps:
       - name: Check out profile source
         uses: actions/checkout@v4
+
+      - name: Audit historical contribution dates without private details
+        if: inputs.repository_fingerprint != ''
+        env:
+          PROFILE_LOGIN: ${{ github.repository_owner }}
+          SNAKE_TOKEN: ${{ secrets.SNAKE_TOKEN }}
+          REPOSITORY_FINGERPRINT: ${{ inputs.repository_fingerprint }}
+          EXPECTED_COUNTS: ${{ inputs.expected_counts }}
+        run: python scripts/audit_contribution_dates.py
 
       - name: Test contribution verification
         run: python -m unittest discover -s scripts -p 'test_check_snake.py'
