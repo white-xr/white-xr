@@ -16,9 +16,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 
-QUERY = """query($login: String!) {
+QUERY = """query($login: String!, $from: DateTime, $to: DateTime) {
   viewer { login }
-  user(login: $login) { contributionsCollection {
+  user(login: $login) { contributionsCollection(from: $from, to: $to) {
+    startedAt endedAt
     restrictedContributionsCount
     contributionCalendar { totalContributions weeks { contributionDays {
       date weekday contributionCount contributionLevel
@@ -34,10 +35,10 @@ PALETTES = {
 }
 
 
-def calendar(token, login):
+def calendar(token, login, start=None, end=None):
     request = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {"login": login}}).encode(),
+        data=json.dumps({"query": QUERY, "variables": {"login": login, "from": start, "to": end}}).encode(),
         headers={"Authorization": "Bearer " + token,
                  "Content-Type": "application/json", "User-Agent": "profile-snake-check"},
     )
@@ -68,6 +69,7 @@ def calendar(token, login):
         "owner_matches": result["data"]["viewer"]["login"].lower() == login.lower(),
         "read_user_scope": bool({"read:user", "user"} & scopes),
         "repo_scope": "repo" in scopes,
+        "started_at": collection["startedAt"], "ended_at": collection["endedAt"],
         "total": total, "restricted": collection["restrictedContributionsCount"],
         "active_days": sum(d["count"] > 0 for d in days), "days": days,
     }
@@ -88,7 +90,10 @@ def check_visibility(source, baseline):
     additional = source["total"] - baseline["total"]
     if additional < 0:
         raise RuntimeError("Owner calendar total is below the workflow-token total; retry")
-    if additional <= 0 and source["restricted"] <= 0:
+    # When private counts are shared on the profile, a repository-scoped workflow
+    # token can receive the same complete total. Its restricted count then proves
+    # private coverage even though the owner can access those contributions.
+    if additional <= 0 and source["restricted"] <= 0 and baseline["restricted"] <= 0:
         raise RuntimeError("No private-contribution coverage could be verified; check profile visibility and SNAKE_TOKEN. Keeping previous images")
     return additional
 
@@ -142,6 +147,7 @@ def verify(snapshot, output_dir):
         "workflow_token_contributions": snapshot["baseline"]["total"],
         "additional_contributions_with_owner_token": additional,
         "restricted_contributions": source["restricted"],
+        "workflow_token_restricted_contributions": snapshot["baseline"]["restricted"],
         "active_days": source["active_days"], "verified_cells_per_svg": len(expected),
         "from": source["days"][0]["date"], "to": source["days"][-1]["date"],
         "calendar_sha256": hashlib.sha256(json.dumps(source["days"], sort_keys=True).encode()).hexdigest(),
@@ -160,8 +166,12 @@ def main():
         if not token:
             raise RuntimeError("SNAKE_TOKEN is missing; refusing a silent public-only fallback")
         login = os.environ["PROFILE_LOGIN"]
-        data = {"source": calendar(token, login),
-                "baseline": calendar(os.environ["ACTIONS_TOKEN"], login)}
+        source = calendar(token, login)
+        # Implicit date ranges depend on the viewer's timezone. Reuse the owner's
+        # exact interval so the bot cannot compare yesterday against today.
+        data = {"source": source,
+                "baseline": calendar(os.environ["ACTIONS_TOKEN"], login,
+                                     source["started_at"], source["ended_at"])}
         additional = check_visibility(data["source"], data["baseline"])
         args.snapshot.write_text(json.dumps(data), encoding="utf-8")
         for name, item in data.items():

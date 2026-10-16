@@ -33,6 +33,34 @@ class SnakeChecks(unittest.TestCase):
     def test_private_coverage_does_not_require_restricted_count(self):
         self.assertEqual(checker.check_visibility(self.source, self.baseline), 6)
 
+    def test_shared_private_counts_can_match_workflow_total(self):
+        baseline = copy.deepcopy(self.source)
+        baseline["owner_matches"] = False
+        baseline["read_user_scope"] = False
+        baseline["restricted"] = 6
+        self.assertEqual(checker.check_visibility(self.source, baseline), 0)
+
+    def test_calendar_sends_an_explicit_shared_interval(self):
+        start, end = "2025-10-15T16:00:00Z", "2026-10-16T15:59:59Z"
+        payload = {"data": {"viewer": {"login": "example"}, "user": {
+            "contributionsCollection": {"startedAt": start, "endedAt": end,
+                "restrictedContributionsCount": 6,
+                "contributionCalendar": {"totalContributions": 8, "weeks": [{"contributionDays": [
+                    {"date": "2026-10-16", "weekday": 5, "contributionCount": 8,
+                     "contributionLevel": "FOURTH_QUARTILE"}
+                ]}]}}
+        }}}
+        with patch.object(checker.urllib.request, "urlopen") as request:
+            response = request.return_value.__enter__.return_value
+            response.headers.get.return_value = "read:user"
+            response.read.return_value = json.dumps(payload).encode()
+            data = checker.calendar("FAKE_TOKEN", "example", start, end)
+            variables = json.loads(request.call_args.args[0].data)["variables"]
+        self.assertEqual(variables["from"], start)
+        self.assertEqual(variables["to"], end)
+        self.assertEqual(data["started_at"], start)
+        self.assertEqual(data["ended_at"], end)
+
     def test_reject_wrong_owner_missing_scope_or_public_only(self):
         for field in ("owner_matches", "read_user_scope"):
             source = dict(self.source, **{field: False})
