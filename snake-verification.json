@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-11-28T07:48:51.182580+00:00",
+  "total_contributions": 1417,
+  "workflow_token_contributions": 1417,
+  "additional_contributions_with_owner_token": 0,
+  "restricted_contributions": 0,
+  "workflow_token_restricted_contributions": 1349,
+  "active_days": 116,
+  "verified_cells_per_svg": 371,
+  "from": "2025-11-23",
+  "to": "2026-11-28",
+  "calendar_sha256": "07c3eb9a3308aedc4edbf73b8c16d2192d73bfe52464d556919be02624c951a0",
+  "svg_sha256": {
+    "github-contribution-grid-snake.svg": "4a828466deae1ab8b37fb5e2888f5defc37bb1d3c3175fc8f48bc5186249f6eb",
+    "github-contribution-grid-snake-dark.svg": "3c86871c7d8b01f263c141c6cb49e65858842c2a5f69d315e6bc24823d594252"
+  }
+}
